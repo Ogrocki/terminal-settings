@@ -29,6 +29,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'valloric/youcompleteme'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -153,3 +158,7 @@ let NERDTreeShowHidden=1
 
 " Tab theme
 hi TabLineFill term=bold cterm=bold ctermbg=0
+
+" macvim
+set gfn=MesloLGMDZ\ Nerd\ Font:h13
+set linespace=2
