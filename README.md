@@ -1,3 +1,5 @@
+# Terminal Settings
+My personal .vimrc and .zshrc files.
 
 ## Installing vim
 ```bash
