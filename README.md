@@ -19,8 +19,9 @@ git clone https://github.com/JackTLi/terminal-settings.git ~/projects/terminal-s
 ## Potential issues:
 
 > No module found named ycm_core
+
 ```bash
-      cd ~/.vim/bundle/YouCompleteMe
-      ./install.py --clang-completer
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
 ```
 
