@@ -1,4 +1,3 @@
-# Basic settings for workspace
 
 ## Installing vim
 ```bash
