@@ -34,6 +34,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'valloric/youcompleteme'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'bling/vim-bufferline'
+Plugin 'moll/vim-bbye'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
