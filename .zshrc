@@ -94,5 +94,14 @@ alias gc="git commit"
 alias pls='sudo $(fc -ln -1)'
 alias hack="ssh"
 
+alias dev-reset="dev down && dev up"
+
+alias gbranches="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+
+# Init Shopify dev
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
 export NVM_DIR="/Users/jack/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$HOME/.yarn/bin:$PATH"
