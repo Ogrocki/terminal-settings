@@ -66,8 +66,18 @@ set softtabstop=2
 set expandtab
 set statusline+=%F
 set showcmd
+set noshowmode
 
 colorscheme dracula 
+
+" for better rendering
+set ttyfast
+
+" for faster updating of ui for gitgutter
+set updatetime=100
+
+" for faster updating of ui for airline
+set ttimeoutlen=50
 
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlP'
