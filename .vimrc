@@ -1,5 +1,4 @@
 set nocompatible              " be iMproved, required
-set shell=/bin/zsh
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -15,30 +14,23 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'dracula/vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-
+" Plugin 'L9'
+" Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'Yggdroot/indentLine'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'airblade/vim-gitgutter'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
-Plugin 'ascenator/L9', {'name': 'newL9'}
-Plugin 'dracula/vim'
-Plugin 'tpope/vim-rails'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kien/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'valloric/youcompleteme'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'bling/vim-bufferline'
-Plugin 'moll/vim-bbye'
-Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,116 +46,42 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" Don't try to be vi compatible
-set nocompatible
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
-" Helps force plugins to load correctly when it is turned back on below
-filetype off
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
-" TODO: Load plugins here (pathogen or vundle)
-
-" Turn on syntax highlighting
 syntax on
-
-" For plugins to load correctly
-filetype plugin indent on
-
-" TODO: Pick a leader key
-" let mapleader = ","
-
-" Security
-set modelines=0
-
-" Show line numbers
 set number
-
-" Show file stats
 set ruler
-
-" Blink cursor on error instead of beeping (grr)
-set visualbell
-
-" Encoding
-set encoding=utf-8
-
-" Whitespace
-set wrap
-set textwidth=79
-set formatoptions=tcqrn1
 set tabstop=2
-set shiftwidth=2
 set softtabstop=2
 set expandtab
-set noshiftround
-
-" Cursor motion
-set scrolloff=3
-set backspace=indent,eol,start
-set matchpairs+=<:> " use % to jump between pairs
-runtime! macros/matchit.vim
-
-" Move up/down editor lines
-nnoremap j gj
-nnoremap k gk
-
-" Allow hidden buffers
-set hidden
-
-" Rendering
-set ttyfast
-
-" Status bar
-set laststatus=2
-
-" Last line
-set showmode
+set statusline+=%F
 set showcmd
 
-" Searching
-nnoremap / /\v
-vnoremap / /\v
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-map <leader><space> :let @/=''<cr> " clear search
+colorscheme dracula 
 
-" Remap help key.
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-nnoremap <F1> :set invfullscreen<CR>
-vnoremap <F1> :set invfullscreen<CR>
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
 
-" Textmate holdouts
+map <c-b> :Buffers<CR>
+map <c-p> :Files<CR>
 
-" Formatting
-map <leader>q gqip
+"let g:ctrlp_max_files=0
+"let g:ctrlp_max_depth=40
+"let g:ctrlp_max_height=30
+"let g:ctrlp_mruf_case_sensitive=0
+"let g:ctrlp_custom_ignore={'dir':'\.git$\|target$\|target-development$\|\.svn$\|logs$', 'file':'TEST.*\.xml$\|Test\.txt$\|\.\(png\|gif\|jpg\|jpeg\|sh\|tar\|gz\|bin\|iml\|jar\|class\|ico\|pdf\|psd\|vsd\|doc\|ppt\|xls\|eps\|tiff\|log\|swf\|as\|fugitiveblame\|zip\|gz\|gzip\|tgz\|tar\|bz\|bz2\|o\|cache\)$\|en_CA$\|fr_CA$'}
+"let g:ctrlp_mruf_exclude='\.git/\|target/\|target-development/\|\.svn/\|logs/\|TEST.*\.xml$\|Test\.txt$\|\.\(png\|gif\|jpg\|jpeg\|sh\|tar\|gz\|bin\|iml\|jar\|class\|ico\|pdf\|psd\|vsd\|doc\|ppt\|xls\|eps\|tiff\|log\|swf\|as\|fugitiveblame\|zip\|gz\|gzip\|tgz\|tar\|bz\|bz2\|o\|cache\)$\|en_CA$\|fr_CA$'
+"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-" Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
-" Uncomment this to enable by default:
-" set list " To enable by default
-" Or use your leader key + l to toggle on/off
-map <leader>l :set list!<CR> " Toggle tabs and EOL
-
-" Color scheme (terminal)
-" set t_Co=256
-" set background=dark
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
-colorscheme dracula
-
-" Nerdtree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
-" Tab theme
-hi TabLineFill term=bold cterm=bold ctermbg=0
-
-" macvim
-set gfn=MesloLGMDZ\ Nerd\ Font:h13
-set linespace=2
