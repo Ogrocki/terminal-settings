@@ -28,6 +28,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'airblade/vim-gitgutter'
+
+Plugin 'tpope/vim-rails'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -63,10 +65,13 @@ set number
 set ruler
 set tabstop=2
 set softtabstop=2
+set shiftwidth=2
 set expandtab
 set statusline+=%F
 set showcmd
 set noshowmode
+set hlsearch
+set backspace=indent,eol,start
 
 colorscheme dracula 
 
@@ -84,6 +89,8 @@ set ttimeoutlen=50
 
 map <c-b> :Buffers<CR>
 map <c-p> :Files<CR>
+map <c-f> :Lines<CR>
+command! CopyBuffer let @+ = expand('%:p')
 
 "let g:ctrlp_max_files=0
 "let g:ctrlp_max_depth=40
@@ -95,3 +102,6 @@ map <c-p> :Files<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
+set background=dark
+
+let g:indentLine_showFirstIndentLevel = 1
