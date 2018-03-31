@@ -72,6 +72,7 @@ set showcmd
 set noshowmode
 set hlsearch
 set backspace=indent,eol,start
+set colorcolumn=120
 
 colorscheme dracula 
 
@@ -87,9 +88,14 @@ set ttimeoutlen=50
 "let g:ctrlp_map = '<c-p>'
 "let g:ctrlp_cmd = 'CtrlP'
 
+" fzf junk
+let g:fzf_files_options =
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
 map <c-b> :Buffers<CR>
-map <c-p> :Files<CR>
+map <c-p> :GFiles<CR>
 map <c-f> :Lines<CR>
+nnoremap <Space> @q
 command! CopyBuffer let @+ = expand('%:p')
 
 "let g:ctrlp_max_files=0
@@ -105,3 +111,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 set background=dark
 
 let g:indentLine_showFirstIndentLevel = 1
+
+" Remove trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
