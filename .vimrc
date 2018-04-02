@@ -30,6 +30,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'tpope/vim-rails'
+Plugin 'scrooloose/nerdtree'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -61,6 +62,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 syntax on
+set hidden
 set number
 set ruler
 set tabstop=2
@@ -74,7 +76,7 @@ set hlsearch
 set backspace=indent,eol,start
 set colorcolumn=120
 
-colorscheme dracula 
+colorscheme dracula
 
 " for better rendering
 set ttyfast
@@ -95,6 +97,11 @@ let g:fzf_files_options =
 map <c-b> :Buffers<CR>
 map <c-p> :GFiles<CR>
 map <c-f> :Lines<CR>
+map <c-[> :bp<CR>
+map <c-]> :bn<CR>
+map <c-\> :NERDTreeToggle %<CR>
+
+" Plays macro
 nnoremap <Space> @q
 command! CopyBuffer let @+ = expand('%:p')
 
@@ -114,3 +121,7 @@ let g:indentLine_showFirstIndentLevel = 1
 
 " Remove trailing whitespace
 autocmd BufWritePre * %s/\s\+$//e
+
+" Yank to system clipboard
+set clipboard=unnamed
+
