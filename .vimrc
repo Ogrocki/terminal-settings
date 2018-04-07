@@ -84,14 +84,15 @@ set colorcolumn=120
 set ignorecase
 set smartcase
 
-let g:solarized_termcolors= 256
-let g:solarized_termtrans = 1
+"let g:solarized_termcolors= 256
+"let g:solarized_termtrans = 1
 
-set termguicolors
-colorscheme palenight
-set background=dark
+"set background=dark
+set t_Co=256
+set t_ut=
+"colorscheme solarized
 
-hi Search guibg=LightRed
+hi Search ctermbg=LightRed
 
 " for better rendering
 set ttyfast
