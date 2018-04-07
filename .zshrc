@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/j780ti/.oh-my-zsh
+export TERM=xterm-256color
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -98,7 +99,7 @@ alias dev-reset="dev down && dev up"
 
 alias gbranches="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
-alias 447activate="./venv/bin/activate"
+alias 447activate="source ./venv/bin/activate"
 
 # Init Shopify dev
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
