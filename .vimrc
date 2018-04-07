@@ -15,6 +15,8 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'drewtempelmeyer/palenight.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Pass the path to set the runtimepath properly.
@@ -31,6 +33,9 @@ Plugin 'airblade/vim-gitgutter'
 
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'ervandew/supertab'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -76,7 +81,17 @@ set hlsearch
 set backspace=indent,eol,start
 set colorcolumn=120
 
-colorscheme dracula
+set ignorecase
+set smartcase
+
+let g:solarized_termcolors= 256
+let g:solarized_termtrans = 1
+
+set termguicolors
+colorscheme palenight
+set background=dark
+
+hi Search guibg=LightRed
 
 " for better rendering
 set ttyfast
@@ -97,9 +112,10 @@ let g:fzf_files_options =
 map <c-b> :Buffers<CR>
 map <c-p> :GFiles<CR>
 map <c-f> :Lines<CR>
-map <c-[> :bp<CR>
-map <c-]> :bn<CR>
+map <c-h> :bp<CR>
+map <c-l> :bn<CR>
 map <c-\> :NERDTreeToggle %<CR>
+nnoremap <c-c> :noh<return><c-c>
 
 " Plays macro
 nnoremap <Space> @q
@@ -114,8 +130,6 @@ command! CopyBuffer let @+ = expand('%:p')
 "
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-set background=dark
 
 let g:indentLine_showFirstIndentLevel = 1
 
