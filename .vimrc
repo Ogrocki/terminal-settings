@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'arcticicestudio/nord-vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Pass the path to set the runtimepath properly.
@@ -36,6 +37,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-ruby/vim-ruby'
 
 Plugin 'ervandew/supertab'
+Plugin 'christoomey/vim-tmux-navigator'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -84,11 +86,12 @@ set colorcolumn=120
 set ignorecase
 set smartcase
 
-let g:solarized_termcolors= 256
-let g:solarized_termtrans = 1
+"let g:solarized_termcolors= 256
+"let g:solarized_termtrans = 1
 
-set termguicolors
-colorscheme palenight
+set t_Co=256
+colorscheme nord
+let g:nord_comment_brightness = 15
 set background=dark
 
 hi Search guibg=LightRed
@@ -112,11 +115,12 @@ let g:fzf_files_options =
 map <c-b> :Buffers<CR>
 map <c-p> :GFiles<CR>
 map <c-f> :Lines<CR>
-map <c-h> :bp<CR>
-map <c-l> :bn<CR>
+map ˙ :bp<CR>
+map ¬ :bn<CR>
 map <c-\> :NERDTreeToggle %<CR>
-nnoremap <c-c> :noh<return><c-c>
 
+nnoremap vv <C-w>v
+nnoremap vh <C-w>s
 " Plays macro
 nnoremap <Space> @q
 command! CopyBuffer let @+ = expand('%:p')
@@ -138,4 +142,4 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Yank to system clipboard
 set clipboard=unnamed
-
+set scrolloff=15
