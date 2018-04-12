@@ -91,7 +91,7 @@ set smartcase
 
 set t_Co=256
 colorscheme nord
-let g:nord_comment_brightness = 15
+let g:nord_comment_brightness = 5
 set background=dark
 
 hi Search guibg=LightRed
@@ -119,10 +119,23 @@ map ˙ :bp<CR>
 map ¬ :bn<CR>
 map <c-\> :NERDTreeToggle %<CR>
 
+nmap <space> <leader>
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+:map <leader>b "_
+
 nnoremap vv <C-w>v
 nnoremap vh <C-w>s
-" Plays macro
-nnoremap <Space> @q
 command! CopyBuffer let @+ = expand('%:p')
 
 "let g:ctrlp_max_files=0
@@ -133,9 +146,14 @@ command! CopyBuffer let @+ = expand('%:p')
 "let g:ctrlp_mruf_exclude='\.git/\|target/\|target-development/\|\.svn/\|logs/\|TEST.*\.xml$\|Test\.txt$\|\.\(png\|gif\|jpg\|jpeg\|sh\|tar\|gz\|bin\|iml\|jar\|class\|ico\|pdf\|psd\|vsd\|doc\|ppt\|xls\|eps\|tiff\|log\|swf\|as\|fugitiveblame\|zip\|gz\|gzip\|tgz\|tar\|bz\|bz2\|o\|cache\)$\|en_CA$\|fr_CA$'
 "
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_char = '┊'
+let g:indentLine_first_char = '┊'
+let g:indentLine_color_term = 237
+let g:indentLine_leadingSpaceEnabled = 0
+let g:indentLine_leadingSpaceChar = '·'
 
 " Remove trailing whitespace
 autocmd BufWritePre * %s/\s\+$//e
@@ -143,3 +161,15 @@ autocmd BufWritePre * %s/\s\+$//e
 " Yank to system clipboard
 set clipboard=unnamed
 set scrolloff=15
+
+" Swap files somewhere else pls
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//et directory^=$HOME/.vim/tmp//
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
