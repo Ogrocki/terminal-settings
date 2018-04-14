@@ -56,9 +56,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set runtimepath^=~/.vim/undle/ctrlp.vim
 
-map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
@@ -82,6 +81,7 @@ set noshowmode
 set hlsearch
 set backspace=indent,eol,start
 set colorcolumn=120
+set autoread
 
 set ignorecase
 set smartcase
@@ -90,8 +90,8 @@ set smartcase
 "let g:solarized_termtrans = 1
 
 set t_Co=256
-colorscheme nord
-let g:nord_comment_brightness = 5
+colorscheme solarized
+"let g:nord_comment_brightness = 5
 set background=dark
 
 hi Search guibg=LightRed
@@ -112,27 +112,20 @@ set ttimeoutlen=50
 let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
-map <c-b> :Buffers<CR>
+map <c-t> :Buffers<CR>
 map <c-p> :GFiles<CR>
 map <c-f> :Lines<CR>
 map ˙ :bp<CR>
 map ¬ :bn<CR>
-map <c-\> :NERDTreeToggle %<CR>
+map <c-n> :NERDTreeToggle %<CR>
 
 nmap <space> <leader>
 " Move to the next buffer
-nmap <leader>l :bnext<CR>
 
-" Move to the previous buffer
-nmap <leader>h :bprevious<CR>nmap <leader>T :enew<cr>
+map <leader>d "_
 
-" Move to the next buffer
-nmap <leader>l :bnext<CR>
-
-" Move to the previous buffer
-nmap <leader>h :bprevious<CR>
-
-:map <leader>b "_
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <c-c> :nohl<CR><c-c>
 
 nnoremap vv <C-w>v
 nnoremap vh <C-w>s
@@ -163,9 +156,9 @@ set clipboard=unnamed
 set scrolloff=15
 
 " Swap files somewhere else pls
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//et directory^=$HOME/.vim/tmp//
+"set backupdir=~/.vim/backup//
+"set directory=~/.vim/swap//
+"set undodir=~/.vim/undo//et directory^=$HOME/.vim/tmp//
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
