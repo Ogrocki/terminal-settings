@@ -1,6 +1,9 @@
 # Terminal Settings
 My personal .vimrc and .zshrc files.
 
+## Ergodox
+https://configure.ergodox-ez.com/keyboard_layouts/knzvdo/edit
+
 ## Installing vim
 ```bash
 brew install vim --with-override-system-vi
