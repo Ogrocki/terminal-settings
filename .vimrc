@@ -128,7 +128,7 @@ map <leader>d "_
 nnoremap <c-c> :nohl<CR><c-c>
 
 nnoremap vv <C-w>v
-nnoremap vh <C-w>s
+nnoremap vH <C-w>s
 command! CopyBuffer let @+ = expand('%:p')
 
 "let g:ctrlp_max_files=0
