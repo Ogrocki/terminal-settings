@@ -82,6 +82,10 @@ set hlsearch
 set backspace=indent,eol,start
 set colorcolumn=120
 set autoread
+set lazyredraw
+set nocursorline
+set nocursorcolumn
+set scrolljump=8
 
 set ignorecase
 set smartcase
@@ -153,7 +157,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Yank to system clipboard
 set clipboard=unnamed
-set scrolloff=15
 
 " Swap files somewhere else pls
 "set backupdir=~/.vim/backup//
