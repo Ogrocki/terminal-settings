@@ -2,7 +2,7 @@
 My personal .vimrc and .zshrc files.
 
 ## Ergodox
-https://configure.ergodox-ez.com/keyboard_layouts/knzvdo/edit
+https://configure.ergodox-ez.com/keyboard_layouts/dvndow/edit
 
 ## Installing vim
 ```bash
