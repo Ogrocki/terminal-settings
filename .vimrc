@@ -119,6 +119,7 @@ let g:fzf_files_options =
 map <c-t> :Buffers<CR>
 map <c-p> :GFiles<CR>
 map <c-f> :Lines<CR>
+map <c-d> :bd<CR>
 map ˙ :bp<CR>
 map ¬ :bn<CR>
 map <c-n> :NERDTreeToggle %<CR>
@@ -128,6 +129,9 @@ nmap <space> <leader>
 
 map <leader>d "_
 
+
+nnoremap A ^
+nnoremap S $
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <c-c> :nohl<CR><c-c>
 
