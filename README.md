@@ -5,7 +5,7 @@ My personal .vimrc and .zshrc files.
 https://configure.ergodox-ez.com/keyboard_layouts/zjnznz/edit
 
 With karabiner:
-https://configure.ergodox-ez.com/layouts/nmEK/latest/0
+https://configure.ergodox-ez.com/layouts/o9Pe/latest/0
 
 ## Installing vim
 ```bash
