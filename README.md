@@ -4,6 +4,9 @@ My personal .vimrc and .zshrc files.
 ## Ergodox
 https://configure.ergodox-ez.com/keyboard_layouts/zjnznz/edit
 
+With karabiner:
+https://configure.ergodox-ez.com/layouts/nmEK/latest/0
+
 ## Installing vim
 ```bash
 brew install vim --with-override-system-vi
