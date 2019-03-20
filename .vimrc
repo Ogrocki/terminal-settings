@@ -58,15 +58,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "set runtimepath^=~/.vim/undle/ctrlp.vim
 
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
 syntax on
 set hidden
 set number
